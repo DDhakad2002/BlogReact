@@ -159,3 +159,36 @@ body {
   padding-left: 8vw;
   padding-right: 8vw;
 }
+@keyframes strokeAnimation {
+  0% {
+    stroke-dasharray: 0 100%;
+    fill: transparent;
+  }
+  50% {
+    stroke-dasharray: 50% 50%;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 100% 0;
+    fill: #1f2937; /* Text fill color (Tailwind gray-800) */
+  }
+}
+
+.stroke-animation {
+  font-size: 3rem;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px #1f2937; /* Outline color */
+  position: relative;
+}
+
+.stroke-animation::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: #1f2937; /* Fill color */
+  overflow: hidden;
+  animation: strokeAnimation 1.5s ease-in-out forwards;
+}

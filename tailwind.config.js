@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         josefin: ['Josefin', 'sans-serif'],
+        shafarik: ['Shafarik', 'serif'],
       },
       backgroundColor: {
         'custom-orange': 'rgba(233, 60, 0, var(--tw-bg-opacity, 1))',

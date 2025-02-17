@@ -5,9 +5,20 @@ import PostList from '@/components/PostList';
 import SectionHeading from '@/components/SectionHeading';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import MainCategories from '../components/MainCategories';
-// import FeaturedPosts from '../components/FeaturedPosts';
-// import PostList from '../components/PostList';
+import { Typewriter } from 'react-simple-typewriter';
+
+const headings = [
+  'Explore, Learn, and Inspire',
+  'Your Daily Dose of Insights & Stories',
+  'Unveiling Ideas, One Blog at a Time',
+  'Where Words Create Wonders',
+  'Discover Fresh Perspectives & Trends',
+  'Fuel Your Curiosity with Engaging Reads',
+  'The Hub of Knowledge & Inspiration',
+  'Stories That Matter, Insights That Inspire',
+  'Bringing Thoughts to Life Through Words',
+  'Stay Curious, Stay Inspired',
+];
 
 const Homepage = () => {
   return (
@@ -22,15 +33,19 @@ const Homepage = () => {
       </div>
       {/* INTRODUCTION */}
       <div className="flex items-center justify-between">
-        {/* titles */}
-        <div className="">
-          <h1 className="text-gray-800 text-2xl md:text-5xl lg:text-6xl font-bold">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        {/* Typewriter titles */}
+        <div className="relative overflow-hidden">
+          <h1 className="text-gray-800 text-2xl md:text-5xl lg:text-6xl font-bold font-shafarik">
+            <Typewriter
+              words={headings}
+              loop={0} // Infinite loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={2000} // Time before switching to the next word
+            />
           </h1>
-          <p className="mt-8 text-md md:text-xl text-black ">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
-            rerum accusantium.
-          </p>
         </div>
         {/* animated button */}
         <Link to="write" className="hidden md:block relative">
@@ -74,10 +89,11 @@ const Homepage = () => {
       <MainCategories />
       {/* FEATURED POSTS */}
       <FeaturedPosts />
+      <SectionHeading title="Hikes" />
       <Gallery />
       <SectionHeading title="Latest Posts" />
       {/* POST LIST */}
-      <div className="">
+      <div>
         <PostList />
       </div>
     </div>
